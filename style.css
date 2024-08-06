@@ -1,0 +1,809 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;900&family=Josefin+Sans:wght@500;600;700&family=Poppins:wght@400;500;600;700;800;900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap');
+
+
+html, body 
+{
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+* 
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.smallText, .mediumText
+{
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1.25;
+}
+.mainHeading
+{
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 400;
+    font-size: 2.25rem;
+
+}
+.mediumText
+{
+    font-size: 1.4rem;
+}
+.smallText
+{
+    font-size: 1rem;
+}
+.largeHeading
+{
+    font-family: 'Cinzel', serif;
+    font-size: 10rem;
+}
+
+
+a
+{
+
+    cursor: pointer;
+    padding: .5rem 0rem;
+    color: rgb(53, 53, 53);
+    text-decoration: none;
+    font-size: 1.25rem;
+    font-family: poppins;
+    font-weight: 500;
+    position: relative;
+    transition: all .35s ease-in-out;
+}
+a::after
+{
+    content: '';
+    position: absolute;
+    left:30%;
+    bottom: 5px;
+    width: 50%;
+    height: 3px;
+    background-color: rgb(73, 73, 73);
+    transition: all .35s ease-in-out;
+    
+}
+a:hover::after
+{
+    left: 0%;
+    width: 100%;
+    right: 20%;
+}
+
+i 
+{
+    font-size: 1.5rem;
+    padding: .8rem 1.05rem;
+    border: 2px solid black;
+    border-radius: 50%;
+    transition:all .5s ease;
+    cursor: pointer;
+    display: inline-block;
+}
+i:hover
+{
+    transform: rotate(360deg);
+}
+
+li 
+{
+    list-style: none;
+    margin:0 1.25rem;
+}
+
+
+/* from body  */
+
+body 
+{
+    background-color: #fffbea;
+    color: rgb(44, 44, 44);
+}
+
+/* header  */
+
+header
+{
+    padding: .25rem 2rem;
+    position: fixed;
+    width: 100vw;
+    left: 0;
+    box-shadow: 0 2px .5rem rgb(182, 182, 182);
+    background-color: rgb(253, 247, 230);
+    z-index: 5;
+}
+.navBar
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo .mainHeading
+{
+    font-family: 'Pacifico', cursive;
+}
+.navLink
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hamBurger
+{
+    display: none;
+}
+
+
+/* main content */
+
+.heroSection
+{
+    margin-top: 12rem;
+}
+.largeHeading
+{
+    padding: 0 4rem;
+    font-weight: bold;
+    text-align: right;
+    position: relative;
+    line-height: 1;
+}
+.largeHeading::after
+{
+    padding: 0 3rem;
+    content: 'cool 2024';
+    font-size: 2rem;
+    position: absolute;
+    top: 55%;
+    right: 0%;
+    font-family: 'Uncial Antiqua', cursive;
+}
+
+.imageContainer
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#imgBox
+{
+    margin: 2.5rem;
+}
+
+.imgContent 
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.explore
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.explore a
+{
+    margin-right: 2rem;
+}
+
+
+/******** heroBannerScroller ******/
+
+.heroBannerScroller
+{
+    
+    background-color: #bca408;
+    width: 100vw;
+    margin: 12rem 0;
+    border: 3px solid black;
+}
+.heroBannerScroller  h1 
+{
+    animation: scrollingAni 55s infinite linear;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.heroBannerScroller h1 i
+{
+    border:none ;
+    font-size: 2.5rem;
+}
+
+@keyframes scrollingAni{
+    0%,100%
+    {
+        transform: translateX(0%);
+    }
+    50%
+    {
+        transform: translateX(-100%);
+    }
+}
+
+
+/****** beloBanner Content ************/
+.belowBannerContent
+{
+    width: 100vw;
+    text-align: center;
+    display: flex;
+    justify-content: end;
+    align-items: flex-end;
+    padding:2rem 3rem;
+}
+
+.belowBannerContent h1 
+{
+    max-width: 80%;
+    text-align: right;
+    font-size: 2.8rem;
+    line-height: 1.25;
+    font-weight: bold;
+
+}
+
+/* no items */
+
+.cardsContainer
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.cardsCollection
+{
+    display: grid;   
+    grid-template-columns: repeat(3,1fr);
+    margin: 3rem;
+}
+.card 
+{
+    padding:.5rem 3.5rem;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: .8rem;
+    background-color: #e7d6c4;
+    transition: transform .5s ease;
+}
+.card:hover
+{
+    transform: scale(1.005);
+    box-shadow: 0px 10px .5rem rgb(12, 12, 12);
+}
+.cardContent p:nth-child(2)
+{
+   text-decoration: line-through;
+   color: rgb(255, 101, 101);
+}
+.cardContent p:nth-child(3)
+{
+   color: rgb(78, 78, 78);
+   font-weight: bold;
+}
+.card img 
+{
+    width: 250px;
+    transition: all 1s ease;
+}
+.card:hover img 
+{
+    transform: scale(1.085);
+}
+.cardContent
+{
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cardHeading
+{
+    font-size: 2.8rem;
+    margin: .58rem 0;
+    font-family: poppins;
+}
+.cardContent p 
+{
+    margin: .5rem 0;
+}
+
+.ShopLink a
+{   
+    margin-right: 2rem;
+}
+
+
+/* reviews */
+
+.reviewSection
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 50%;
+    margin: 40vh auto;
+}
+.reviewSection .mainHeading
+{
+    margin: 2.25rem;
+}
+.reviewSection p 
+{
+    color: rgb(73, 73, 73);
+    letter-spacing: 1.25;
+}
+/* footer */
+footer
+{
+    padding: 4rem 3rem 2rem;
+    box-shadow: 0 2px 2rem rgb(219, 219, 219);
+}
+.footerUpper,.footerBottom
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2rem 0 0;
+}
+.footerUpper div 
+{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    line-height: 1.45;
+}
+
+.footerBottom
+{
+    margin-top: 4.5rem;
+}
+
+form 
+{
+    border-bottom: 1px solid yellowgreen;
+}
+.email
+{
+    min-width: 400px;
+    
+}
+
+.button,.email
+{
+    padding: .5rem 1rem;
+    font-size: 1.05rem;
+    font-weight: 400;
+    font-family: poppins;
+    padding: .5rem 1rem;
+    outline: none;
+    border: none;
+    margin-top: .5rem;
+}
+.button
+{
+    background: none;
+    cursor: pointer;
+}
+
+.socialLinks i
+{
+    margin:0 1.75rem ;
+}
+.socilaLinks a:hover::after 
+{
+    width: 0;
+    left: 50%;
+}
+
+/* ***********media Queries********* */
+
+@media screen and (min-width:769px) and (max-width:1024px) {
+    .mainHeading
+    {
+        font-size: 2rem;
+    }
+    .mediumText
+    {
+        font-size: 1.3rem;
+    }
+    .smallText
+    {
+        font-size: .95rem;
+    }
+    a,i
+    {
+        font-size: 1.15rem;
+    }
+    li 
+    {
+        margin: 1rem;
+    }
+    .largeHeading
+    {
+        font-size: 7rem;
+    }
+
+    /* hero sction */
+    
+    .heroSection
+    {
+        margin-top: 8rem;
+    }
+
+    .largeHeading::after
+    {
+        font-size: 1.5rem;
+    }
+    #imgBox
+    {
+        margin: 2rem 1rem;
+    }
+    #imgBox img 
+    {
+        width: 95%;
+    }
+    .imgContent
+    {
+        justify-content: space-around;
+    }
+    /* heroBannerScroller */
+    .heroBannerScroller
+    {
+        margin: 8rem 0;
+    }
+    .heroBannerScroller h1 i
+    {
+        font-size: 1.5rem;
+    }
+
+    /****** beloBanner Content ************/
+    .belowBannerContent h1 
+    {
+        font-size: 2.2rem;
+    }
+
+    /* noItems */
+
+    .cardsCollection
+    {
+        grid-template-columns: repeat(2,1fr);
+        gap: 2rem;
+    }
+
+    /* footer */
+
+    footer
+    {
+        padding: 2rem;
+    }
+    .footerBottom
+    {
+        flex-direction: column;
+    }
+    form 
+    {
+        margin: 1rem 0;
+    }
+    .socilaLinks
+    {
+        margin: 2rem;
+    }
+}
+
+@media screen and (min-width:426px) and (max-width:768px) {
+    .mainHeading
+    {
+        font-size: 1.7rem;
+    }
+    .mediumText
+    {
+        font-size: 1.1rem;
+    }
+    .smallText
+    {
+        font-size: .9rem;
+    }
+    a,i
+    {
+        font-size: 1.15rem;
+    }
+    li 
+    {
+        margin: 1rem;
+    }
+    .largeHeading
+    {
+        font-size: 6.15rem;
+    }
+    header
+    {
+        position: relative;
+    }
+    .navLink
+    {
+        flex-direction: column;
+        position: absolute;
+        justify-content: center;
+        background-color: rgb(255, 242, 200);
+        width: 50vh;
+        right: 0%;
+        top:100%;
+        height: calc(100% + 70vh);
+        transform: translateX(100%);
+        transition: .5s ease;
+    }
+    .activeLinks
+    {
+        transform: translateX(0);
+    }
+    .hamBurger
+    {
+        display: block;
+        z-index: 5;
+    }
+    .hamBurger i
+    {
+        border: none;
+        transform: none;
+        color: rgb(77, 77, 77);
+    }
+    #closeBtn 
+    {
+        display: none;
+    }
+
+    /* hero sction */
+    
+    .heroSection
+    {
+        margin-top: 7rem;
+    }
+
+    .largeHeading::after
+    {
+        font-size: 1.2rem;
+    }
+    #imgBox
+    {
+        margin: 2rem 1rem;
+    }
+    #imgBox img 
+    {
+        width: 95%;
+    }
+    .imgContent
+    {
+        justify-content: space-around;
+    }
+    /* heroBannerScroller */
+    .heroBannerScroller
+    {
+        margin: 8rem 0;
+    }
+    .heroBannerScroller h1 i
+    {
+        font-size: 1.5rem;
+    }
+
+    /****** beloBanner Content ************/
+    .belowBannerContent h1 
+    {
+        font-size: 2rem;
+    }
+
+    /* noItems */
+
+    .cardsCollection
+    {
+        grid-template-columns: repeat(2,1fr);
+        gap: .5rem;
+    }
+    .card 
+    {
+        padding: .7rem 2.15rem;
+    }
+
+    /* review */
+
+    /* footer */
+    .reviewSection
+    {
+        margin: 20vh auto;
+        max-width: 80%;
+    }
+    footer
+    {
+        padding: 2rem;
+    }
+    .footerBottom
+    {
+        flex-direction: column;
+    }
+    form 
+    {
+        margin: 1rem 0;
+    }
+    .socilaLinks
+    {
+        margin: 2rem;
+    }
+}
+
+@media screen and (max-width:425px) {
+    .mainHeading
+    {
+        font-size: 1.4rem;
+    }
+    .mediumText
+    {
+        font-size: 1.1rem;
+    }
+    .smallText
+    {
+        font-size: .9rem;
+    }
+    a,i
+    {
+        font-size: 1rem;
+    }
+    li 
+    {
+        margin: 1rem;
+    }
+    .largeHeading
+    {
+        font-size: 4rem;
+    }
+    .InkMode,.cart
+    {
+        display: none;
+    }
+    header
+    {
+        position: relative;
+    }
+    .navLink
+    {
+        flex-direction: column;
+        position: absolute;
+        justify-content: center;
+        background-color: rgb(255, 242, 200);
+        width: 50vh;
+        right: 0%;
+        top:100%;
+        height: calc(100% + 70vh);
+        transform: translateX(100%);
+        transition: .5s ease;
+    }
+    .activeLinks
+    {
+        transform: translateX(0);
+    }
+    .hamBurger
+    {
+        display: block;
+    }
+    .hamBurger i
+    {
+        border: none;
+        transform: none;
+        color: rgb(77, 77, 77);
+    }
+
+    /* hero sction */
+    
+    .heroSection
+    {
+        margin-top: 8rem;
+    }
+    .heroSection .largeHeading
+    {
+        text-align: left;
+        padding: 0 2rem;
+    }
+
+    .largeHeading::after
+    {
+        font-size: 1rem;
+        right: -10%;
+        top: 5%;
+    }
+    .imageContainer
+    {
+        flex-direction: column;
+    }
+    #imgBox
+    {
+        margin: 2rem 1rem;
+    }
+    .imgContent
+    {
+        justify-content: space-between;
+    }
+    /* heroBannerScroller */
+    .heroBannerScroller
+    {
+        margin: 5rem 0;
+    }
+    .heroBannerScroller h1 i
+    {
+        font-size: 1.5rem;
+    }
+
+    /****** beloBanner Content ************/
+    .belowBannerContent
+    {
+        align-items: center;
+        justify-content: center;
+        padding:2rem;
+    }
+    .belowBannerContent h1 
+    {
+        font-size: 1.5rem;
+        max-width: 100%;
+    }
+
+    /* noItems */
+
+    .cardsCollection
+    {
+        grid-template-columns: repeat(1,1fr);
+        gap: .5rem;
+    }
+    .card 
+    {
+        padding: .7rem 2.15rem;
+    }
+
+    /* review */
+
+    /* footer */
+    .reviewSection
+    {
+        margin: 20vh auto;
+        max-width: 98%;
+    }
+    footer
+    {
+        padding: 2rem;
+    }
+    .footerBottom,.footerUpper
+    {
+        flex-direction: column;
+    }
+    .footerUpper div 
+    {
+        margin: 1rem 0;
+    }
+    form 
+    {
+        margin: 1rem 0;
+    }
+    .socilaLinks
+    {
+        margin: 2rem;
+    }
+}
